@@ -1,0 +1,96 @@
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 3fr; /* Sidebar takes 1 part, Main content takes 3 parts */
+    grid-template-areas:
+        "header header"
+        "sidebar main"
+        "related-products related-products";
+    grid-gap: 20px;
+}
+.sidebar {
+    float: left;
+    grid-area: sidebar;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.main-content {
+    grid-area: main;
+    padding: 20px;
+}
+
+.related-products {
+    grid-area: related-products;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+footer {
+    grid-area: footer;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+/* CSS Grid Layout for the e-commerce product page */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #f7dacc;
+    color: #ed6328;
+    padding: 10px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #141313;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr; /* Adjusting to a single column layout for small screens */
+        grid-template-areas:
+            "header"
+            "sidebar"
+            "main"
+            "related-products"
+            "footer";
+    }
+
+    .sidebar,
+    .main-content,
+    .related-products {
+        width: 100%; 
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .container {
+        grid-template-columns: 1fr 3fr; /* Restoring the two-column layout for larger screens */
+        grid-template-areas:
+            "header header"
+            "sidebar main"
+            "related-products main"
+            "footer footer";
+    }
+}
+
